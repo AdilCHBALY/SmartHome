@@ -1,0 +1,621 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98B5B7B9-BE48-4BC6-91A7-58CD2F32FBA9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SmartHome</RootNamespace>
+    <AssemblyName>SmartHome</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Trotinat\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>33225F6EB0B8F10AFB2D66BDA6E8FC9873585581</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SmartHome_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Control.Draggable, Version=1.0.5049.269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Control.Draggable.1.0.5049.269\lib\net35-Client\Control.Draggable.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acc_creation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acc_creation.Designer.cs">
+      <DependentUpon>Acc_creation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dash.Designer.cs">
+      <DependentUpon>dash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAdapter\AdminDA.cs" />
+    <Compile Include="DataAdapter\HomaMachineDA.cs" />
+    <Compile Include="DataAdapter\LogsDA.cs" />
+    <Compile Include="DataAdapter\MachineDA.cs" />
+    <Compile Include="DataAdapter\MachineDetailsDA.cs" />
+    <Compile Include="DataAdapter\ZoneDA.cs" />
+    <Compile Include="DataAdapter\ZoneDetailsDA.cs" />
+    <Compile Include="Devices_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devices_list.Designer.cs">
+      <DependentUpon>Devices_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\DBHelper.cs" />
+    <Compile Include="home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logs.Designer.cs">
+      <DependentUpon>logs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Climatiseur.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Climatiseur.Designer.cs">
+      <DependentUpon>Climatiseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Coffee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Coffee.Designer.cs">
+      <DependentUpon>Coffee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Garage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Garage.Designer.cs">
+      <DependentUpon>Garage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\SimpleMachine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\SimpleMachine.Designer.cs">
+      <DependentUpon>SimpleMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Sma3at.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Sma3at.Designer.cs">
+      <DependentUpon>Sma3at.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Tlaja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Tlaja.Designer.cs">
+      <DependentUpon>Tlaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Tv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Tv.Designer.cs">
+      <DependentUpon>Tv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Wifi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Wifi.Designer.cs">
+      <DependentUpon>Wifi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Zone_ui.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Zone_ui.Designer.cs">
+      <DependentUpon>Zone_ui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MachineControlers\Zone_ico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MachineControlers\Zone_ico.Designer.cs">
+      <DependentUpon>Zone_ico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\HomeMachine.cs" />
+    <Compile Include="Models\Logs.cs" />
+    <Compile Include="Models\Machine.cs" />
+    <Compile Include="Models\MachineDetails.cs" />
+    <Compile Include="Models\Zone.cs" />
+    <Compile Include="Models\ZoneDetails.cs" />
+    <Compile Include="Notif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notif.Designer.cs">
+      <DependentUpon>Notif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rooms.Designer.cs">
+      <DependentUpon>rooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="room_name.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="room_name.Designer.cs">
+      <DependentUpon>room_name.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Acc_creation.resx">
+      <DependentUpon>Acc_creation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dash.resx">
+      <DependentUpon>dash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devices_list.resx">
+      <DependentUpon>Devices_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logs.resx">
+      <DependentUpon>logs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Climatiseur.resx">
+      <DependentUpon>Climatiseur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Coffee.resx">
+      <DependentUpon>Coffee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Garage.resx">
+      <DependentUpon>Garage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\SimpleMachine.resx">
+      <DependentUpon>SimpleMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Sma3at.resx">
+      <DependentUpon>Sma3at.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Tlaja.resx">
+      <DependentUpon>Tlaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Tv.resx">
+      <DependentUpon>Tv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Wifi.resx">
+      <DependentUpon>Wifi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Zone_ui.resx">
+      <DependentUpon>Zone_ui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MachineControlers\Zone_ico.resx">
+      <DependentUpon>Zone_ico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notif.resx">
+      <DependentUpon>Notif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="rooms.resx">
+      <DependentUpon>rooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="room_name.resx">
+      <DependentUpon>room_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SmartHome_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_2Asset 3%404x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-128-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200px-Cygwin_logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password-17-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email-98-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email-108-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_username-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cold-5-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sun-37-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sun_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sun_checked1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cold_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a-2-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Auti_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Auti_checked1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Auti_checked2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weather-43-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a-2-512_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lampe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lampe_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tv-11281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tv_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ac_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ac_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cam_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Robot_asp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Robot_asp_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_blind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_blind_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woofer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woofer_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frisge_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cofee_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cofee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logs_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_purple1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kitchen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garage_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baignoire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dining-table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hanger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\night_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zones_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-signal-cctv-1024x576.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-signal-cctv-1024x5761.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarme_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire_detector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fire_detector_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smoke_detector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smoke_detector_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shortcut-script-app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\night-mode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cctv-camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
