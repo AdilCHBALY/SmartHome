@@ -55,4 +55,4 @@ This desktop application is designed to provide a user-friendly interface for co
 
 
 ## Contact
-Houssam Haraf - houssamharaf2@gmail.com
+Adil Chbaly - adil.chbaly10@gmail.com
